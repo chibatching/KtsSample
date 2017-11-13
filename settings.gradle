@@ -1,1 +1,25 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        maven { url "https://jcenter.bintray.com/" }
+        maven { url "https://maven.google.com" }
+        maven { url "http://dl.bintray.com/kotlin/kotlin-eap-1.2" }
+    }
+    resolutionStrategy {
+        eachPlugin {
+            switch (requested.id.id) {
+                case "com.android.application":
+                    useModule("com.android.tools.build:gradle:${requested.version}")
+                    break
+                case "com.github.gfx.ribbonizer":
+                    useModule("com.github.gfx.ribbonizer:ribbonizer-plugin:${requested.version}")
+                    break
+                case "com.google.gms.google-services":
+                    useModule("com.google.gms:google-services:${requested.version}")
+                    break
+            }
+        }
+    }
+}
+
 include ':app'
