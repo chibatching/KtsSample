@@ -4,8 +4,8 @@ import com.github.gfx.ribbonizer.YellowRibbonBuilder
 
 plugins {
     id("com.android.application") version "3.0.0"
-    kotlin("android") version "1.2.0-rc-39"
-    kotlin("android.extensions") version "1.2.0-rc-39"
+    kotlin("android")
+    kotlin("android.extensions")
     id("com.github.gfx.ribbonizer") version "2.1.0"
     id("com.google.gms.google-services") version "3.1.2" apply false
 }
@@ -43,7 +43,7 @@ ribbonizer {
     }
 }
 
-val kotlinVersion: String by extra
+val kotlinVersion by project
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to arrayOf("*.jar"))))

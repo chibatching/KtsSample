@@ -17,6 +17,9 @@ pluginManagement {
                 case "com.google.gms.google-services":
                     useModule("com.google.gms:google-services:${requested.version}")
                     break
+                case ~/org\.jetbrains\.kotlin\..*/:
+                    useVersion("${kotlinVersion}")
+                    break
             }
         }
     }
